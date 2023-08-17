@@ -1,0 +1,311 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'css/reset.css'%}" />
+    <link rel="stylesheet" href="{%static 'css/layout.css'%}" />
+    <link rel="stylesheet" href="{%static 'css/style.css'%}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{%static 'css/responsive.css'%}" />
+    <title>Final Project</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="headerlist">
+        <div class="gradiant gradiant_first"></div>
+        <div class="headerlist__logo">Diabetic Retinopathy Detection</div>
+        <div style="float: right">
+          <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="image" style="color: #00f46e">Choose an image: </label>
+            <input
+              style="color: grey"
+              type="file"
+              name="image"
+              accept="image/*"
+              required
+            />
+            <button type="submit" class="headerlist__btn">Upload</button>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero__div1">
+        {%if result != '' %}
+        <div class="output" style="height: 20%; width: 40%">
+          <img id="output_img" src="/media/{{ url }}" alt="" srcset="" />
+          <h3 style="color: #00f46e">
+            Diabetic Label: <span style="color: white">{{result}}</span>
+          </h3>
+          <br />
+          <h3 style="color: white">{{prediction}}</h3>
+        </div>
+        {% endif%}
+        <div class="hero__div1_col1">
+          <div class="hero__div1_col1_text">
+            Through the lens of deep learning, detecting
+            <span style="color: #00f46e">diabetic retinopathy</span> becomes a
+            sight-saving reality
+          </div>
+        </div>
+        <div class="hero__div1_col2">
+          <div class="circle green"></div>
+          <div class="circle blue"></div>
+
+          <div class="hero__div1_col2_text1">
+            find the perfect piece to add to your collection.
+          </div>
+          <div class="hero__div1_col2_text2">
+            Try it now and join our revolution.
+          </div>
+        </div>
+      </div>
+      <div class="hero__div2">
+        <div class="gradiant gradiant_second"></div>
+
+        <div class="hero__div2_box">
+          <img
+            class="hero__div2_img"
+            src="{%static 'images/eye1.jpg'%}"
+            alt="*"
+            srcset=""
+          />
+        </div>
+        <div class="hero__div2_box">
+          <img
+            class="hero__div2_img"
+            src="{%static 'images/checkup.jpg'%}"
+            alt="*"
+            srcset=""
+          />
+        </div>
+        <div class="hero__div2_box">
+          <img
+            class="hero__div2_img"
+            src="{%static 'images/dp.jpg'%}"
+            alt="*"
+            srcset=""
+          />
+        </div>
+        <div class="hero__div2_box">
+          <img
+            class="hero__div2_img"
+            src="{%static 'images/diabetic.jpg'%}"
+            alt="*"
+            srcset=""
+          />
+        </div>
+        <div class="hero__div2_box">
+          <img
+            class="hero__div2_img"
+            src="{%static 'images/eye.jpg'%}"
+            alt="*"
+            srcset=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="marketplace">
+      <div class="marketplace__col">
+        <div class="marketplace_line1">
+          <div class="marketplace_line1_box"></div>
+          <div class="marketplace_line1_text">Us</div>
+        </div>
+        <div class="marketplace_line2">About Us</div>
+        <div class="marketplace_line3">
+          Meet our team of four Computer Engineering students from Cosmos
+          Engineering College. We're working on our final project, which focuses
+          on the 'Detection of Diabetic Retinopathy using Deep Learning.' Our
+          goal is to leverage AI technology to improve diabetic retinopathy
+          diagnosis and contribute to better patient care. With dedication and
+          enthusiasm, we're excited to make a positive impact in the field of
+          healthcare. Together, we strive to create a meaningful solution and
+          enhance the early detection of diabetic retinopathy.
+        </div>
+        <button class="marketplace_btn">Learn More</button>
+      </div>
+      <div class="marketplace__col marketplace__col2">
+        <img
+          class="marketplace_frontimg"
+          src="{%static 'images/abt.png'%}"
+          alt=""
+        />
+      </div>
+    </section>
+    <section class="operation">
+      <div class="marketplace_line1 operation_line1">
+        <div class="marketplace_line1_box"></div>
+        <div class="marketplace_line1_text">Mission</div>
+      </div>
+      <div class="marketplace_line2">Objectives</div>
+      <div class="marketplace_line3 white">
+        The objectives of this project are threefold. First, we aim to detect
+        diabetic retinopathy (DR) with higher accuracy and screen patients more
+        rapidly compared to conventional diagnosis systems. Secondly, our goal
+        is to develop an economical and faster detection technique for diabetic
+        retinopathy using deep learning. Lastly, we seek to enhance the accuracy
+        of pre-existing low accuracy detection techniques by leveraging the
+        power of effective deep learning algorithms and transfer learning.
+      </div>
+    </section>
+    <section class="collections">
+      <div class="marketplace_line1 collections_line1">
+        <div class="marketplace_line1_box"></div>
+        <div class="marketplace_line1_text">Team</div>
+      </div>
+      <div class="collections_line2">Our Team Members</div>
+      <div class="collections_row">
+        <div class="collections_box">
+          <img
+            class="collections_box_img"
+            src="{%static 'images/bandana.png'%}"
+            alt=""
+            srcset=""
+          />
+          <div class="box_numbering">#01</div>
+
+          <div class="collections_box_title">Bandana Karna</div>
+          <div class="collections_box_line">
+            <div class="col">
+              <div class="collections_box_subtitle">
+                <span class="collections_box_subtitle1">Roll No</span>180311
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="collections_box">
+          <img
+            class="collections_box_img"
+            src="{%static 'images/kausalya.png'%}"
+            alt=""
+            srcset=""
+          />
+          <div class="box_numbering">#02</div>
+
+          <div class="collections_box_title">Kaushalya Sharma</div>
+          <div class="collections_box_line">
+            <div class="col">
+              <div class="collections_box_subtitle">
+                <span class="collections_box_subtitle1">Roll No</span>180316
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="collections_box">
+          <div class="img_div">
+            <img
+              class="collections_box_img"
+              src="{%static 'images/tej (1).png'%}"
+              alt=""
+              srcset=""
+            />
+            <div class="box_numbering">#03</div>
+          </div>
+          <div class="collections_box_title">
+            Tej <br />
+            Bhatta
+          </div>
+          <div class="collections_box_line">
+            <div class="col">
+              <div class="collections_box_subtitle">
+                <span class="collections_box_subtitle1">Roll No</span>180336
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="collections_box">
+          <div class="img_div">
+            <img
+              class="collections_box_img"
+              src="{%static 'images/yamuna.png'%}"
+              alt=""
+              srcset=""
+            />
+            <div class="box_numbering">#04</div>
+          </div>
+          <div class="collections_box_title">Yamuna Bhandari</div>
+          <div class="collections_box_line">
+            <div class="col">
+              <div class="collections_box_subtitle">
+                <span class="collections_box_subtitle1">Roll No</span>180341
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps">
+      <div class="collections_line2">Our Flow Chart</div>
+      <table class="custom-table">
+        <tr>
+          <td class="table_text2">Step I</td>
+          <td class="table_text3">
+            Select the image and upload it to the system.
+          </td>
+        </tr>
+        <tr>
+          <td class="table_text2">Step II</td>
+          <td class="table_text3">
+            Preprocess the uploaded image to enhance its quality and prepare it
+            for analysis.
+          </td>
+        </tr>
+        <tr>
+          <td class="table_text2">Step III</td>
+          >
+          <td class="table_text3">
+            Use deep learning algorithms to detect the condition of the retina,
+            particularly focusing on diabetic retinopathy.
+          </td>
+        </tr>
+        <tr>
+          <td class="table_text2">Step IV</td>
+          <td class="table_text3">
+            Display the result of the analysis, providing insights into the
+            condition of the retina and any potential signs of diabetic
+            retinopathy.
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <footer>
+      <div class="footer_logo">Detection of Diabetic Retinopathy</div>
+      <div class="footer_info">
+        <div class="footer_info_desc">
+          With the power of deep learning, we can now see the unseen signs of
+          diabetic retinopathy
+        </div>
+        <!-- <div class="footer_info_icons">
+        <img src="{%static 'images/youtube.png'%}" alt="" srcset="" />
+        <img src="{%static 'images/twiter.png'%}" alt="" srcset="" />
+        <img src="{%static 'images/face.png'%}" alt="" srcset="" />
+        <img src="{%static 'images/g.png'%}" alt="" srcset="" />
+      </div> -->
+        <br />
+        <div class="footer_info_rights">All rights reserved@2023</div>
+      </div>
+    </footer>
+    <script src="{%static 'js/main.js"></script>
+  </body>
+</html>

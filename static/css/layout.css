@@ -1,0 +1,18 @@
+header {
+  padding: 20px;
+  overflow: hidden;
+}
+nav {
+  overflow: hidden;
+  margin-top: 10px;
+
+  float: right;
+}
+
+footer {
+  width: 100%;
+  height: aut0;
+  display: flex;
+  padding: 80px 120px;
+  justify-content: space-between;
+}
